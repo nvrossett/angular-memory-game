@@ -1,0 +1,27 @@
+{
+  "name": "App",
+  "author": "Nícolas Rossett",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-angular-gettext": "^2.1.10",
+    "grunt-browser-sync": "*",
+    "grunt-combine-mq": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-jade": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-karma": "^0.10.1",
+    "jeet": "*",
+    "jit-grunt": "*",
+    "karma": "^0.12.31",
+    "karma-coverage": "^0.3.1",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "*",
+    "nib": "*",
+    "rupture": "^0.6.1",
+    "time-grunt": "*"
+  }
+}

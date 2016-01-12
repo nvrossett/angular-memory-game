@@ -1,0 +1,47 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+*
+  box-sizing border-box
+
+  &:before,
+  &:after
+    box-sizing border-box
+
+  
+
+html
+    font-family $font-primary
+    color $color-gray
+    letter-spacing -1px
+    min-width 320px
+
+body
+    width 100%
+    height 100%
+    overflow-x hidden
+
+    +above('l')
+      background url('../img/bg.png')  100% 200px  no-repeat
+      background-size 50% auto
+      overflow-y scroll
+
+.sr-only
+    position absolute
+    top -50px
+
+.site
+    width 100%
+    font-size 13px
+    position relative
+    margin-top 10px
+
+    &:before
+      border-top 10px solid $bg-bar-top
+      position fixed
+      top 0
+      left 0
+      content ' '
+      width 100%
+      z-index 5000

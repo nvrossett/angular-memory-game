@@ -1,0 +1,61 @@
+npm-debug.log
+node_modules
+bower_components
+
+### Drupal ###
+# Ignore configuration files that may contain sensitive information.
+cp/sites/*/*settings*.php
+
+# Ignore paths that contain generated content.
+cp/cache/
+cp/files/
+cp/sites/*/files
+cp/sites/*/private
+
+# Ignore default text files
+/CHANGELOG.txt
+/COPYRIGHT.txt
+/INSTALL*.txt
+/LICENSE.txt
+/MAINTAINERS.txt
+/UPGRADE.txt
+/README.txt
+cp/sites/all/README.txt
+cp/sites/all/modules/README.txt
+cp/sites/all/themes/README.txt
+
+### Espresso ###
+*.esproj
+sftp-config.json
+=======
+npm-debug.log
+node_modules
+node_modules/**
+bower_components/**
+
+### Drupal ###
+# Ignore configuration files that may contain sensitive information.
+cp/sites/*/*settings*.php
+
+# Ignore paths that contain generated content.
+cp/cache/
+cp/files/
+cp/sites/*/files
+cp/sites/*/private
+
+# Ignore default text files
+/CHANGELOG.txt
+/COPYRIGHT.txt
+/INSTALL*.txt
+/LICENSE.txt
+/MAINTAINERS.txt
+/UPGRADE.txt
+/README.txt
+cp/sites/all/README.txt
+cp/sites/all/modules/README.txt
+cp/sites/all/themes/README.txt
+
+### Espresso ###
+*.esproj
+sftp-config.json
+.dropbox.attr 

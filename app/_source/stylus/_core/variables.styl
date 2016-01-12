@@ -1,0 +1,96 @@
+//
+// Variables
+//
+// 1. Colors
+// 2. Elements
+// 3. Media Queries
+// 4. Typography
+//
+// ===============================================================
+
+//
+// 1. Colors
+// --------------------------------------------------
+$color-red-dark = #B51922
+$color-red-dark-2 = #87131a
+$color-gray = #4C5250
+$color-gray_opacity = rgba(76,82,80,0.78)
+$color-gray_opacity_2 = rgba(76,82,80,0.1)
+$color-gray-light = #737876
+$color-gray-light-2 = #F3F4F3
+$color-white = #FFF
+$color-beige = #eee8d4
+
+//
+// 2. Elements
+// --------------------------------------------------
+$bg-bar-top = $color-red-dark
+$bg-menu-mobile = $color-red-dark
+$bg-menu-mobile-hover = $color-gray
+$bg-menu-mobile-active = $color-gray-light
+$bg-filter-submenu = $color-beige
+$bg-contactbar-mobile = $color-gray-light-2
+$bg-menu-border = $color-gray-light-2
+$bg-button-filter = $color-red-dark
+$bg-button-filter-hover = $color-gray
+$bg-view-header = $color-red-dark
+$color-link-primary = $color-red-dark
+$color-link-secondary = $color-gray
+$color-link-tertiary = $color-white
+$border-img = $color-gray-light
+
+
+
+//
+// 3. Media Queries
+// --------------------------------------------------
+
+// scale                  0         400px          600px        800px         1050px        1800px
+
+//                        └──┬──┘ └──┬──┘ └──┬──┘ └──┬──┘ └──┬──┘ └──┬──
+// Slice numbers:               1             2             3             4             5             6
+// scale-names                 'xs'          's'           'm'           'l'           'xl'          'hd'
+
+
+// scale                  0          400px          600px        800px         1050px        1800px
+
+//                        └──┬──┘ └──────────┬─────────┘ └──┬──┘ └──┬──
+// scale-devices             'mobile'                     'tablet'                  'desktop'        'hd'
+
+
+
+$debug-enable = false
+
+$debug-break-point
+    &:before
+        position fixed
+        bottom 0
+        right 0
+        font-size 2rem
+        color #FFF
+        background-color rgba(0,0,0,0.8)
+        padding 0 35px
+        z-index 50000
+
+        +at(1)
+            content 'xs'
+        +at(2)
+            content 's'
+        +at(3)
+            content 'm'
+        +at(4)
+            content 'l'
+        +at(5)
+            content 'xl'
+        +at(6)
+            content 'hd'
+
+body
+    if ( $debug-enable is true ){
+        @extend $debug-break-point
+    }
+
+//
+// 3. Media Queries
+// --------------------------------------------------
+$font-primary = 'Droid Sans', sans-serif

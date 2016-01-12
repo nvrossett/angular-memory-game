@@ -1,0 +1,59 @@
+//
+// Typography
+// --------------------------------------------------
+  
+// Uppercase
+// --------------------------------------------------
+
+$uppercase 
+  text-transform uppercase
+  letter-spacing 1.5px
+  
+
+// Headings
+// --------------------------------------------------
+
+$h1 
+  setfont(50)
+  
+  @media (min-width $screen-sm) 
+    setfont(80)
+ 
+  @media (min-width $screen-lg) and (min-height 800px)
+    pxtorem('font-size', 119)
+    pxtorem('line-height', 105)
+
+$h2 
+  setfont(28)
+ 
+
+$h3 
+  setfont(22)
+ 
+
+$h4 
+  setfont(18)
+ 
+
+$h5 
+  setfont(15)
+ 
+
+$h6 
+  setfont(11, 700)
+  @extends $uppercase
+ 
+
+// Paragraphs
+// --------------------------------------------------
+
+// Default
+$p1
+  setfont($fontSize)
+ 
+
+// Small
+$p2 
+  setfont($fontSize * 0.8)
+ 
+ 
