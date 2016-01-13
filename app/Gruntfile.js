@@ -82,7 +82,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          '<%= css_build %>/style.css': '<%= css_build %>/style.css',
+          '<%= css_build %>/style.min.css': '<%= css_build %>/style.css',
         }
       }
     },
@@ -102,34 +102,11 @@ module.exports = function(grunt) {
 
             // Vendor Plugins
             'bower_components/angular/angular.min.js',  // Angular
-            'bower_components/angular/angular-sanitize.min.js',   // Angular - Sanatize
-            'bower_components/angulartics/dist/angulartics.min.js',
-            'bower_components/angulartics/dist/angulartics-ga.min.js',
-            'bower_components/angular/angular-animate.min.js',   // Angular - animate
             'bower_components/angular-ui-router/release/angular-ui-router.js',  // Angular - Routes
-            'bower_components/angular-loading-bar/build/loading-bar.min.js',   // Angular - Loading bar
-            'bower_components/angular-gettext/dist/angular-gettext.min.js',
-
-            'custom_components/checklist-model/checklist-model.js',
-
-            'custom_components/zepto/src/zepto.js',
-            'custom_components/zepto/src/event.js',
-            'custom_components/zepto/src/ajax.js',
-            'custom_components/zepto/src/form.js',
-            'custom_components/zepto/src/ie.js',
-            'custom_components/zepto/src/fx.js',
-            'custom_components/zepto/src/fx_method.js',
-            'custom_components/zepto/src/detect.js',
-            'custom_components/zepto/src/selector.js',
-            'custom_components/zepto/src/touch.js',
-
-            'bower_components/vanilla-masker/build/vanilla-masker.min.js',
-
-            // 'custom_components/zepto/src/gesture.js',
-            // 'bower_components/angular-animate/angular-animate.min.js',   // Angular - Animate
-            // 'bower_components/jquery/dist/jquery.js', // jQuery
-            // 'bower_components/jquery-hammerjs/jquery.hammer-full.js', // jQuery - HammerJS
-            // 'bower_components/picturefill/picturefill.js',  // Picturefill
+            'bower_components/jquery/dist/jquery.js', // jQuery
+            'custom_components/shuffle.js', // Shuffle
+            // 'bower_components/angular/angular-sanitize.min.js',   // Angular - Sanatize
+            // 'bower_components/angular/angular-animate.min.js',   // Angular - animate
 
           ]
         }
@@ -238,9 +215,7 @@ module.exports = function(grunt) {
       dev: {
 
         options: {
-          open: false,
 
-          proxy: "app.nvieira.com.br",
 
           files : [
             '<%= build %>/css/*.css',
@@ -250,6 +225,12 @@ module.exports = function(grunt) {
             '<%= build %>/**/*.svg',
             '<%= build %>/*.html'
           ],
+
+          host : '',
+
+          server: {
+            baseDir: '<%= build %>/',
+          },
 
           watchTask: true,
 

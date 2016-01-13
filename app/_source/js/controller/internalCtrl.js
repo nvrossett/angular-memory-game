@@ -1,4 +1,4 @@
-app.controller('InternalCtrl', function ($scope, $http) {
+app.controller('InternalCtrl', function ($scope, Metatags) {
 
 
-})
+});

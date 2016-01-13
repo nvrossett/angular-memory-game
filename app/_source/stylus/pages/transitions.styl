@@ -1,0 +1,61 @@
+.ui-views.ng-enter
+    animation enter 2s ease-in-out
+    position absolute
+    width 100%
+    .molecule-filters-resume
+        animation enterFilter 3s ease-in-out
+
+.ui-views.ng-leave
+    animation exit 1s ease-in-out
+    position absolute
+    width 100%
+    .molecule-filters-resume
+        opacity 0
+
+
++below('s')
+
+    @keyframes exit
+        0%
+            opacity 1
+            transform translate(0,0)
+
+        100%
+            opacity 0
+            transform translate(-200%,0)
+
+
++above('m')
+
+    @keyframes exit
+        0%
+            opacity 1
+            transform translate(0,0)
+
+        100%
+            opacity 0
+            transform translate(0,-200%)
+
+
+
+@keyframes enter
+    0%
+        opacity 0
+        transform translate(200%,0)
+
+    99%
+        opacity 1
+        transform translate(0,0)
+    100%
+        transform none
+
+
+@keyframes enterFilter
+    0%
+        opacity 0
+    70%
+        opacity 0
+        transform translate(0,100px)
+    100%
+        opacity 1
+        transform translate(0,0)

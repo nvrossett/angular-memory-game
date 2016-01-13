@@ -1,6 +1,6 @@
 app.factory('Metatags', function( $location ) {
     var meta = {
-        title: "nvieira.com.br - Criação e otimização de sites",
+        title: "nvieira.com.br - Memory Game",
         current_link: $location.$$absUrl,
         body: '',
         img: ''
