@@ -5,8 +5,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         url: "/",
         templateUrl: "views/home.html"
     });
-
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('!');
+  
 
 });
