@@ -82,7 +82,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          '<%= css_build %>/style.min.css': '<%= css_build %>/style.css',
+          '<%= css_build %>/style.css': '<%= css_build %>/style.css',
         }
       }
     },
