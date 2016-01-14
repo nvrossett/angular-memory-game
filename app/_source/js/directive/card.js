@@ -10,10 +10,6 @@ app.directive("card", function() {
                                 '<div class="atom-card-back"></div>' +
                             '</div>' +
                         '</a>' +
-                    '</li>',
-        link: function(scope, element, attrs) {
-
-        }
-
+                    '</li>', 
     };
 });

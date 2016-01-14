@@ -9,7 +9,7 @@ html(lang='en', ng-app="game", ng-controller="AppCtrl")
     base(href='/')
 
     //- Title
-    title(ng-bind="Metatags.show().title") 
+    title nvieira.com.br | Angular Memory Game
  
     
     //- Stylesheet and font    
@@ -22,21 +22,93 @@ html(lang='en', ng-app="game", ng-controller="AppCtrl")
         section.site 
         
             header.organism-header
-                div.molecule-players.first-player
-                    span.atom-player-label 1º Player
-                    span.molecule-status
-                        span.atom-status-label Time
-                        span.atom-status-value 2:35
-                        span.atom-status-label Moves
-                        span.atom-status-value 35
+            
+                div.molecule-controls(ng-if='!game.mode')
+                    h1.atom-controls-mainTitle Memory Game in Angular
+                    h5.atom-controls-title Select One Game Mode
+                    a.atom-btn-red(href='#', ng-click='selectMode("singlePlayer")', start-game) Single Player                    
+                    a.atom-btn-red(href='#', ng-click='selectMode("multiPlayer")', start-game) Multiplayer
+                    div.atom-control-option
+                        label
+                            input(type="checkbox" name='reveal' ng-model='reveal.status' value='true') 
+                            span Start reveal
                         
-                h1 Cards Remaing: {{ CardsRemaing }}
+                        
+                div.molecule-alert(ng-if='game.mode', ng-class='{active : game.finish}')
+                    div.molecule-alert-singlePlayer(ng-if='game.mode === "singlePlayer"')
+                        h3.atom-alert-title You Win
+                        div.atom-alert-message 
+                            p You did  
+                                span {{ game.singlePlayer.moves }} moves 
+                                | and 
+                                span {{ game.singlePlayer.score }} points 
+                                | in 
+                                span {{ game.status.time | secondsInHours }} 
+                            a.atom-btn-red(href='#', ng-click='restartGame()', end-game) Restart
+                            
+                    div.molecule-alert-multiPlayer(ng-if='game.mode === "multiPlayer"')
+                        h3.atom-alert-title {{ game.multiPlayer.result }}
+                        div.atom-alert-message
+                            p
+                                strong 1º Player 
+                                span 
+                                    {{ game.multiPlayer.playerOne.score }} points 
+                                | and 
+                                span
+                                    {{  game.multiPlayer.playerOne.moves }} moves 
+
+                            p
+                                strong 2º Player 
+                                span 
+                                    {{ game.multiPlayer.playerTwo.score }} points 
+                                | and 
+                                span
+                                    {{  game.multiPlayer.playerTwo.moves }} moves 
+       
+                            a.atom-btn-red(href='#', ng-click='restartGame()', end-game) Restart
+                
+                div.organism-players-singlePlayer(ng-if='game.mode === "singlePlayer"')
+                    div.molecule-players.singlePlayer 
+                        span.atom-player-label Status
+                        span.molecule-status
+                            span.atom-status-label Time 
+                            span.atom-status-value {{ game.status.time | secondsInHours }}
+                            span.atom-status-label Moves
+                            span.atom-status-value {{ game.singlePlayer.moves }}
+                            span.atom-status-label Score
+                            span.atom-status-value {{ game.singlePlayer.score }} 
+                                
+                div.organism-players-multiPlayer(ng-if='game.mode === "multiPlayer"')
+                    div.molecule-players.playerOne(ng-class='{active : game.turn === "playerOne"}')
+                        span.atom-player-label 1º Player
+                        span.molecule-status 
+                            span.atom-status-label Moves
+                            span.atom-status-value {{ game.multiPlayer.playerOne.moves }}
+                            span.atom-status-label Score
+                            span.atom-status-value {{ game.multiPlayer.playerOne.score }}
+                            
+                    div.molecule-players.playerTwo(ng-class='{active : game.turn === "playerTwo"}')
+                        span.atom-player-label 2º Player
+                        span.molecule-status
+                            span.atom-status-label Moves
+                            span.atom-status-value {{ game.multiPlayer.playerTwo.moves }}
+                            span.atom-status-label Score
+                            span.atom-status-value {{ game.multiPlayer.playerTwo.score }}
+                    
+                    div.molecule-players.status        
+                        span.atom-status-label Time 
+                        span.atom-status-value {{ game.status.time | secondsInHours }} 
+                        
             //- Main 
             //- =================================
             main#main.organism-main(role='main')
                 div.organism-main-views(ui-view)
-             
-
+                
+            br(clear="all")
+            br(clear="all")
+            br(clear="all")
+            br(clear="all")
+                
 
         //- Scripts
         //- =================================  

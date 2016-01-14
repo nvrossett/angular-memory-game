@@ -1,5 +1,5 @@
 .atom-card-item
-    col(1/5, cycle: 5)
+    transition width 1s, margin 0.15s
     margin-bottom 15px
     position relative
     height 150px
@@ -43,7 +43,7 @@
 
 .atom-card-back
     @extend $placeholder-card-model
-    background url('../img/back-card.png') center center no-repeat
+    background #F4F4F4 url('../img/back-card.png') center center no-repeat
     width 120px
     height 150px
     z-index 2

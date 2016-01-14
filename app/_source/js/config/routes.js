@@ -1,9 +1,9 @@
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
- 
+
     $urlRouterProvider.otherwise("/");
     $stateProvider.state('home', {
         url: "/",
-        templateUrl: "views/single-player.html"
+        templateUrl: "views/home.html"
     });
 
     $locationProvider.html5Mode(true);

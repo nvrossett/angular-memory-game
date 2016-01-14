@@ -1,4 +1,16 @@
 .molecule-cards
     list-style none
     margin 0
-    padding 0 
+    padding 0
+
+    &.waiting-start
+        margin 0 20%
+        .atom-card-item
+            width 5%
+            float left
+            &:hover
+                margin-top -20px
+    &.in-play
+        .atom-card-item
+            width 20%
+            float left 

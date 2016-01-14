@@ -14,7 +14,7 @@ app.factory('Cards', function() {
         var cards = $.merge( colors, colors );
 
         // Shuffle colors
-        cards = $.shuffle(cards);
+        cards = $.shuffle(cards); 
 
         // Array of Cards
         var arrCards = [];
@@ -33,6 +33,7 @@ app.factory('Cards', function() {
 
         });
 
+
         return arrCards;
     }
 
@@ -46,7 +47,7 @@ app.factory('Cards', function() {
             cardOne: cardOne,
             cardTwo: cardTwo,
             status: ( cardOne.color === cardTwo.color && cardOne.index !== cardTwo.index )
-        }; 
+        };
 
     }
 

@@ -1,0 +1,17 @@
+.molecule-players
+    col(1/3)
+    min-width 285px
+    white-space nowrap
+
+    &.status
+        position absolute
+        right 0
+        text-align right
+
+    &.playerOne, &.playerTwo
+        transition all 0.5s
+        transform scale(0.7)
+        opacity 0.5
+        &.active
+            transform scale(1)
+            opacity 1
